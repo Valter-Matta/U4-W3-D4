@@ -30,6 +30,8 @@ public class Persona {
 
 	// Costruttori
 	public Persona (String name, String cognome) {
+		this.nome = name;
+		this.cognome = cognome;
 	}
 
 	public Persona (String nome, String cognome, String email, LocalDate dataNascita, char sesso) {

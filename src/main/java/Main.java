@@ -24,11 +24,15 @@ public class Main {
 		EventoDAO eventoDAO = new EventoDAO(em);
 		PartecipazioneDAO partecipazioneDAO = new PartecipazioneDAO(em);
 
-		Persona atleta1 = new Persona("Usain", "Bolt");
-		Persona atleta2 = new Persona("Yohan", "Blake");
+		Persona atleta1 = new Persona("Usain", "Bolt","ooo@exxx.com",LocalDate.of(2020,5,5),'M');
+		Persona atleta2 = new Persona("Yohan", "Blake","oeo@exxx.com",LocalDate.of(2020,5,5),'M');
 		Set<Persona> listaPartecipanti = new HashSet<>();
 		listaPartecipanti.add(atleta1);
 		listaPartecipanti.add(atleta2);
+		System.out.println("Atleta1: " + atleta1.getNome() + " " + atleta1.getCognome());
+		System.out.println("Atleta2: " + atleta2.getNome() + " " + atleta2.getCognome());
+		em.persist(atleta1);
+		em.persist(atleta2);
 
 
 		GaraDiAtletica garaDiAtletica = new GaraDiAtletica("Corsa 100 metri", LocalDate.of(2021, 5, 15), "Staffetta", Evento.TipoEvento.PUBBLICO, 100, listaPartecipanti, atleta1);
